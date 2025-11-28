@@ -19,21 +19,17 @@
           <li class="nav-item">
             <router-link class="nav-link text-white" to="/">Home</router-link>
           </li>
+          
           <li class="nav-item" v-if="userStore.currentUser">
             <router-link class="nav-link text-white" to="/posts/create">Tạo bài</router-link>
           </li>
           <li class="nav-item" v-if="userStore.currentUser">
             <router-link class="nav-link text-white" to="/profile">Profile</router-link>
           </li>
-          <!-- Nếu chưa login -->
+          
           <li class="nav-item" v-if="!userStore.currentUser">
-            <router-link class="nav-link text-white" to="/login">Đăng nhập</router-link>
+            <router-link class="nav-link text-white" to="/auth">Đăng nhập</router-link>
           </li>
-          <li class="nav-item" v-if="!userStore.currentUser">
-            <router-link class="nav-link text-white" to="/register">Đăng ký</router-link>
-          </li>
-
-          <!-- Nếu đã login: hiển thị tên và nút đăng xuất -->
           <li class="nav-item dropdown" v-if="userStore.currentUser">
             <a
               class="nav-link dropdown-toggle text-white"

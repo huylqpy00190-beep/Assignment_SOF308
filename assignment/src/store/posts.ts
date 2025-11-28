@@ -52,6 +52,12 @@ export const usePostStore = defineStore('posts', {
         post.comments.push(comment)
         this.savePosts()
       }
+    },
+    // Hành động mới đã được thêm vào: Xóa tất cả bài viết
+    deleteAllPosts() {
+      this.posts = [] // Đặt lại mảng posts thành rỗng
+      this.savePosts() // Lưu mảng rỗng vào localStorage để xóa dữ liệu
+      console.log('Đã xóa tất cả bài viết khỏi store và localStorage.')
     }
   }
-})
+});
